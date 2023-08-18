@@ -38,7 +38,7 @@ const Register = () => {
                         </h3>
                     </a>
                 </div>
-                <div className="w-full p-12 border-blue-700 border-2 mt-6 overflow-hidden bg-white bg-opacity-30  shadow-md sm:max-w-md sm:rounded-lg">
+                <div className="w-full  p-5 sm:p-12 border-blue-700 border-2 mt-6 overflow-hidden bg-white bg-opacity-30  shadow-md sm:max-w-md sm:rounded-lg">
                     <form onSubmit={(e)=>handleSubmit(e)}>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                         <div>

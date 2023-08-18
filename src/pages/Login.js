@@ -34,7 +34,7 @@ const handleSubmit = (e) => {
     }
   return (
     <div>
-           <div className="flex p-2 flex-col items-center min-h-screen bg-cover  bgimg  bg-no-repeat sm:justify-center bg-blue-300 ">
+           <div className="flex p-5 sm:p-10 flex-col items-center min-h-screen bg-cover  bgimg  bg-no-repeat sm:justify-center bg-blue-300 ">
                 <div>
                     <a href="/">
                         <h3 className="text-4xl font-bold  text-blue-600">
@@ -42,7 +42,7 @@ const handleSubmit = (e) => {
                         </h3>
                     </a>
                 </div>
-                <div className="w-full p-12 border-blue-700 border-2 mt-6 overflow-hidden bg-white bg-opacity-30  shadow-md sm:max-w-md sm:rounded-lg">
+                <div className="w-full p-2 sm:p-12 border-blue-700 border-2 mt-6 overflow-hidden bg-white bg-opacity-30  shadow-md sm:max-w-md sm:rounded-lg">
                     <form onSubmit={(e)=>{handleSubmit(e)}}>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
 
