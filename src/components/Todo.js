@@ -48,9 +48,11 @@ const fetchTodos = async () => {
   };
   
   useEffect(() => {
-    fetchTodos();
-  });
   
+    fetchTodos()  });
+  
+
+    // adding the todos
 
 const addTodo = async (todo) => {
     try {
