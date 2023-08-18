@@ -43,3 +43,17 @@ You're about to initialize a Firebase project in this directory:
     at process.processTimers (node:internal/timers:507:7)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2023-08-18T11:49:07.772Z] ----------------------------------------------------------------------
+[debug] [2023-08-18T11:49:07.774Z] Command:       F:\NodeJs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-08-18T11:49:07.774Z] CLI Version:   12.4.8
+[debug] [2023-08-18T11:49:07.774Z] Platform:      win32
+[debug] [2023-08-18T11:49:07.775Z] Node Version:  v18.12.1
+[debug] [2023-08-18T11:49:07.775Z] Time:          Fri Aug 18 2023 16:49:07 GMT+0500 (Pakistan Standard Time)
+[debug] [2023-08-18T11:49:07.776Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-18T11:49:12.839Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.

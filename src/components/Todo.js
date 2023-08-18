@@ -23,32 +23,9 @@ const getTodos = async () => {
   } catch (error) {
 
       setError(error.message)
-
   }
 }
 
-
-// const fetchTodos = async () => {
-//   try {
-//     const todosFromFirebase = await getTodos();
-//     const currentUser = auth.currentUser;
-
-//     if (todosFromFirebase && Array.isArray(todosFromFirebase) && currentUser) {
-//       const currentUserTodos = todosFromFirebase.filter(todo => todo.userId === currentUser.uid);
-//       setTodos(currentUserTodos);
-//     } else {
-//       setTodos([]);
-//     }
-//   } catch (error) {
-//     console.error('Error fetching and filtering todos:', error);
-//     setError(error.message);
-//     setTodos([]);
-//   }
-// };
-
-// useEffect(() => {
-//   fetchTodos();
-// }, []);
 
 
 
