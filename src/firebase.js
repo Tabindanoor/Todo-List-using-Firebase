@@ -2,16 +2,18 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 import {getFirestore} from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAqlcSAztmDZQ-2BIGFqXs4Rovn2DJkFS0",
-  authDomain: "todo-list-eceaf.firebaseapp.com",
-  projectId: "todo-list-eceaf",
-  storageBucket: "todo-list-eceaf.appspot.com",
-  messagingSenderId: "207436224014",
-  appId: "1:207436224014:web:dd82e529d95966c5f14e5f"
+  apiKey: "AIzaSyBfwT-3d6RZ9RVl32bWGBYqnI7_D4tF39E",
+  authDomain: "solve-todo.firebaseapp.com",
+  projectId: "solve-todo",
+  storageBucket: "solve-todo.appspot.com",
+  messagingSenderId: "936264572386",
+  appId: "1:936264572386:web:fcdf6945ebbedbc2b76dbb"
 };
+
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig);
 
 
 

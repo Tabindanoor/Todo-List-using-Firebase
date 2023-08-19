@@ -26,28 +26,31 @@ const getTodos = async () => {
   }
 }
 
-
-
-
 const fetchTodos = async () => {
     try {
-      const todosFromFirebase = await getTodos();
-      const currentUser = auth.currentUser;
+ 
   
-      if (currentUser) {
-        const currentUserTodos = todosFromFirebase.filter(todo => todo.userId === currentUser.uid);
-        setTodos(currentUserTodos);
-      } else {
-        setTodos([]);
-      }
-    } catch (error) {
-      // Handle the error, e.g., set an error state or display a message
-    //   console.error('Error fetching todos:', error);
-    setError(error.message);
-      setTodos([]); // Set todos to an empty array in case of an error
-    }
-  };
-  
+
+
+const todosFromFirebase = await getTodos();
+const currentUser = auth.currentUser;
+
+if (currentUser && Array.isArray(todosFromFirebase)) {
+  const currentUserTodos = todosFromFirebase
+    .filter(todo => todo.userId === currentUser.uid)
+    .sort((a, b) => a.timestamp - b.timestamp); // Sort by timestamp
+  setTodos(currentUserTodos);
+} else {
+  setTodos([]);
+}
+} catch (error) {
+setError(error.message);
+setTodos([]); // Set todos to an empty array in case of an error
+}
+
+}
+
+
   useEffect(() => {
   
     fetchTodos() 
@@ -58,15 +61,18 @@ const fetchTodos = async () => {
     // adding the todos
 
 const addTodo = async (todo) => {
+   
+
     try {
-      const user = auth.currentUser; // Get the authenticated user
+      const user = auth.currentUser;
       if (!user) {
         setError("User not authenticated.");
         return;
       }
       
-      // Add the user's ID to the todo
+      // Add the user's ID and timestamp to the todo
       todo.userId = user.uid;
+      todo.timestamp = Date.now();
   
       await addDoc(collection(db, 'todos'), todo);
       setSuccess("Todo Added Successfully");
