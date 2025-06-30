@@ -11,11 +11,9 @@ const Home = () => {
     const logout = () => {
         signOut(auth)
             .then(() => {
-                // console.log("User successfully logged out.");
                 history("/");
             })
             .catch((error) => {
-                // console.error("Logout error:", error);
                 document.write(error);
             });
 
