@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-// import register from "../images/register.jpeg"
 import "../styles/style.css"
 import { Link } from 'react-router-dom'
 import { auth } from '../firebase'
@@ -16,7 +15,7 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
       
-        setError(null); // Clear previous errors
+        setError(null); 
       
         createUserWithEmailAndPassword(auth, email, password)
           .then(() => {

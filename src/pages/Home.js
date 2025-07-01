@@ -16,11 +16,8 @@ const Home = () => {
             .catch((error) => {
                 document.write(error);
             });
-
     }
     
-    
-
   return (
     <div className=' bg-blue-300 p-5 sm:p-10 min-h-screen bgimg  '>
         <div className='flex flex-col sm:flex-row justify-between '>
