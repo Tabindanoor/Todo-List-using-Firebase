@@ -4,8 +4,6 @@ import {db} from "../firebase"
 import { auth } from '../firebase';
 
 const Todo = () => {
-
-
   const [todos, setTodos] = useState([]);
   const [inputTodo, setInputTodo] = useState('');
   const [selectedTodo, setSelectedTodo] = useState(null);
@@ -28,10 +26,6 @@ const getTodos = async () => {
 
 const fetchTodos = async () => {
     try {
- 
-  
-
-
 const todosFromFirebase = await getTodos();
 const currentUser = auth.currentUser;
 
@@ -76,6 +70,7 @@ const addTodo = async (todo) => {
   
       await addDoc(collection(db, 'todos'), todo);
       setSuccess("Todo Added Successfully");
+      setTimeout(() => setSuccess(null), 2000);
     } catch (error) {
       setError(error.message);
     }
@@ -88,6 +83,8 @@ const updateTodo = async (id, updatedTodo) => {
       const todoRef = doc(db, 'todos', id);
       await updateDoc(todoRef, updatedTodo);
       setSuccess("Todo Updated Successfully")
+    setTimeout(() => setSuccess(null), 2000);
+
 
   } catch (error) {
       // console.error('Error updating todo: ', error);
@@ -102,6 +99,8 @@ const updateTodo = async (id, updatedTodo) => {
         const todoRef = doc(db, 'todos', id);
         await deleteDoc(todoRef);
         setSuccess("Todo Deleted Successfully")
+        setTimeout(() => setSuccess(null), 2000);
+
     
     }
          catch (error) {
@@ -145,8 +144,10 @@ const handleDeleteTodo = async (id) => {
 
   return (
     <div>
-<div className="w-full p-2 sm:p-12 border-blue-700 border-2 mt-6 overflow-hidden bg-white bg-opacity-30 justify-center mx-auto shadow-md sm:max-w-2xl sm:rounded-lg">
-            <form>
+<div className="w-full p-2 m:p-12 border-blue-700 border-2 mt-6 overflow-hidden bg-white bg-opacity-30 justify-center mx-auto shadow-md sm:max-w-2xl sm:rounded-lg">
+            <form onSubmit={(e)=>{
+                e.preventDefault()
+                handleAddTodo()}}>
             
                 <div className="mt-4">
                     <label
@@ -181,7 +182,7 @@ const handleDeleteTodo = async (id) => {
 
             {/* List of todos */}
             <ul className="mt-4 space-y-2">
-                {todos.map((todo) => (
+                {todos && todos.map((todo) => (
                     <li
                         key={todo.id}
                         className="flex mt-2 sm:flex-row items-center justify-between w-full bg-blue-600 text-white border-gray-300 py-2 px-5  rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
